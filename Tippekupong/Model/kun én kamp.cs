@@ -6,16 +6,16 @@
         private int awayGoals = 0;
         private bool matchIsRunning = true;
         private string bet;
+        public bool isBetCorrect;
         public void Run()
         {
             while (matchIsRunning) NextTick();
             EndOfGmae();
         }
 
-        public kun_én_kamp()
+        public kun_én_kamp(string UserInput)
         {
-            Console.Write("Gyldig tips: \r\n - H, U, B\r\n - halvgardering: HU, HB, UB\r\n - helgardering: HUB\r\nHva har du tippet for denne kampen? ");
-            bet = Console.ReadLine().ToUpper();
+            bet = UserInput.ToUpper();
         }
 
 
@@ -31,7 +31,7 @@
         private void EndOfGmae()
         {
             var result = homeGoals == awayGoals ? "U" : homeGoals > awayGoals ? "H" : "B";
-            var isBetCorrect = bet.Contains(result);
+            isBetCorrect = bet.Contains(result);
             var isBetCorrectText = isBetCorrect ? "riktig" : "feil";
             Console.WriteLine($"Du tippet {isBetCorrectText}");
         }
