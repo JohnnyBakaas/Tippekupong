@@ -7,7 +7,6 @@ namespace Tippekupong
         static void Main(string[] args)
         {
             kun_én_kamp kake = new kun_én_kamp();
-
             kake.Run();
         }
     }

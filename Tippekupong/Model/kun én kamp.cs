@@ -8,12 +8,11 @@
         private string bet;
         public void Run()
         {
-            StartGame();
             while (matchIsRunning) NextTick();
             EndOfGmae();
         }
 
-        private void StartGame()
+        public kun_én_kamp()
         {
             Console.Write("Gyldig tips: \r\n - H, U, B\r\n - halvgardering: HU, HB, UB\r\n - helgardering: HUB\r\nHva har du tippet for denne kampen? ");
             bet = Console.ReadLine().ToUpper();
